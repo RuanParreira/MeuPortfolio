@@ -1,13 +1,13 @@
 export default function Header() {
   return (
-    <header className="flex w-full justify-between py-[1.5rem] px-[10%] items-center">
+    <header className="flex w-full justify-between h-[5rem] px-[10%] items-center sticky z-100">
       <a href="">
-        <h1 className="text-xl">
-          RUAN PARREIRA <label className="text-blue-600">.</label>
+        <h1 className="text-2xl">
+          RUAN PARREIRA <label className="text-blue-500">.</label>
         </h1>
       </a>
       <nav className="flex">
-        <ul className="flex space-x-15 text-md items-center">
+        <ul className="flex space-x-10 text-md items-center">
           <li>
             <a href="">INÍCIO</a>
           </li>
