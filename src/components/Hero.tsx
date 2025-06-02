@@ -1,19 +1,19 @@
 import Button2 from "./Button2";
 
-export default function Home() {
+export default function Hero() {
   return (
-    <section id="Home" className="h-[calc(100vh-5rem)] ">
-      <div className="flex h-full space-x-[50rem]">
-        <div className="px-[10%] flex flex-col justify-center h-full gap-4">
+    <section id="hero" className="h-[calc(100vh-5rem)] ">
+      <div className="flex h-full space-x-[30rem]">
+        <div className="px-[15%] flex flex-col justify-center h-full gap-4">
           <h2 className="text-xl">SOFTWARE DEVELOPER</h2>
           <h2 className="text-5xl">
             Olá eu sou o Ruan, Desenvolvedor FullStack
           </h2>
-          <p className="text-lg">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae
-            quidem, iure quaerat vel quisquam fuga expedita accusantium incidunt
-            unde consequatur dicta cum commodi natus tenetur nobis deleniti
-            error in! Reiciendis.
+          <p className="text-xl">
+            Atualmente cursando Sistemas de Informação na Uniube (5º período),
+            desenvolvo soluções web, unindo programação e design. Também tenho
+            experiência em manutenção de computadores, trazendo um olhar
+            completo para tecnologia.
           </p>
           <div className="flex justify-center flex-col gap-5 ">
             <button className="bg-blue-500 text-zinc-900 font-bold w-60 h-10 text-lg rounded-md mt-5 cursor-pointer hover:bg-blue-800">
@@ -79,7 +79,7 @@ export default function Home() {
           className="h-[50rem] object-fill absolute bottom-0 right-0 z-0 mask-r-from-10% mask-l-from-80% mask-t-from-80%"
         />
       </div>
-      <a href="">
+      <a href="#about">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="40"

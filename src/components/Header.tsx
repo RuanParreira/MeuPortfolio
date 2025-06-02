@@ -1,9 +1,9 @@
 export default function Header() {
   return (
-    <header className="flex w-full justify-between h-[5rem] px-[10%] items-center sticky z-100">
+    <header className="flex w-full justify-between h-[5rem] px-[15%] items-center sticky z-100">
       <a href="">
         <h1 className="text-2xl">
-          RUAN PARREIRA <label className="text-blue-500">.</label>
+          RUAN PARREIRA <span className="text-blue-500">.</span>
         </h1>
       </a>
       <nav className="flex">

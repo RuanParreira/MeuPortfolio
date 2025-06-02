@@ -1,10 +1,12 @@
 import "./App.css";
-import Home from "./components/Home";
+import About from "./components/About";
+import Hero from "./components/Hero";
 
 function App() {
   return (
     <>
-      <Home />
+      <Hero />
+      <About />
     </>
   );
 }
