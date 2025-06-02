@@ -19,4 +19,12 @@
   .skillCards {
     @apply bg-zinc-800 p-8 rounded-xl border border-zinc-700;
   }
+
+  .projectCards {
+    @apply bg-zinc-800 flex flex-col space-y-5 rounded-xl border border-zinc-700;
+  }
+
+  .linguagens {
+    @apply bg-[#3F3F46] h-6 w-15 justify-center rounded-4xl flex items-center;
+  }
 }
