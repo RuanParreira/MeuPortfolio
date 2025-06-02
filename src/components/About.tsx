@@ -15,7 +15,7 @@ export default function About() {
       <div className="flex flex-col justify-center w-full min-w-0 ">
         <h3 className="text-4xl">SOBRE MIM</h3>
         <span className="block w-24 h-1 bg-blue-500 mt-5 mb-4"></span>
-        <p className="text-xl">
+        <p className="text-xl text-justify">
           Olá! Me chamo Ruan Gonçalves Parreira, sou Desenvolvedor Full Stack e
           atualmente curso Sistemas de Informação na Uniube, estando no 5º
           período. Sou apaixonado por tecnologias, desenvolvimento de software e

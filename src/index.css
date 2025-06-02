@@ -14,3 +14,9 @@
     background-color: var(--fundo);
   }
 }
+
+@layer components {
+  .skillCards {
+    @apply bg-zinc-800 p-8 rounded-xl border border-zinc-700;
+  }
+}

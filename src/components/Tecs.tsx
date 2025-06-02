@@ -22,12 +22,12 @@ export default function Tecs() {
 
   useEffect(() => {
     controls.start({
-      x: ["0%", "-100%"],
+      x: ["0%", "-50%"],
       transition: {
         x: {
           repeat: Infinity,
           repeatType: "loop",
-          duration: 15,
+          duration: 10,
           ease: "linear",
         },
       },

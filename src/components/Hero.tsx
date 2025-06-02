@@ -9,7 +9,7 @@ export default function Hero() {
           <h2 className="text-5xl">
             Olá eu sou o Ruan, Desenvolvedor FullStack
           </h2>
-          <p className="text-xl">
+          <p className="text-xl text-justify">
             Atualmente cursando Sistemas de Informação na Uniube (5º período),
             desenvolvo soluções web, unindo programação e design. Também tenho
             experiência em manutenção de computadores, trazendo um olhar
