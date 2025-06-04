@@ -1,4 +1,5 @@
 import Button2 from "./Button2";
+import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
@@ -76,25 +77,27 @@ export default function Hero() {
         <img
           src="./teste.png"
           alt="Foto de Perfil"
-          className="absolute right-0 bottom-0 z-0 h-[50rem] mask-t-from-80% mask-r-from-10% mask-l-from-80% object-fill"
+          className="absolute right-0 bottom-0 z-0 h-full mask-t-from-80% mask-r-from-10% mask-l-from-80% object-fill"
         />
       </div>
       <a href="#about">
-        <svg
+        <motion.svg
           xmlns="http://www.w3.org/2000/svg"
           width="40"
           height="40"
           viewBox="0 0 24 24"
           fill="none"
           stroke="#ffffff"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          className="lucide lucide-arrow-down-icon lucide-arrow-down absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce hover:stroke-blue-500"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="lucide lucide-arrow-down-icon lucide-arrow-down absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce hover:animate-none hover:stroke-blue-500"
+          whileHover={{ scale: 1.5 }}
+          transition={{ type: "spring", stiffness: 300 }}
         >
           <path d="M12 5v14" />
           <path d="m19 12-7 7-7-7" />
-        </svg>
+        </motion.svg>
       </a>
     </section>
   );

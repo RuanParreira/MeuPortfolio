@@ -1,11 +1,33 @@
 import { useEffect, useState } from "react";
 
+const sections = [
+  { id: "hero", label: "INÍCIO" },
+  { id: "about", label: "SOBRE" },
+  { id: "skills", label: "HABILIDADES" },
+  { id: "projects", label: "PROJETOS" },
+  { id: "contact", label: "CONTATO" },
+];
+
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState("hero");
 
   useEffect(() => {
     function onScroll() {
       setScrolled(window.scrollY > 0);
+
+      // Detecta a seção ativa
+      let current = "hero";
+      for (const section of sections) {
+        const el = document.getElementById(section.id);
+        if (el) {
+          const offset = el.offsetTop - 80;
+          if (window.scrollY >= offset) {
+            current = section.id;
+          }
+        }
+      }
+      setActiveSection(current);
     }
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
@@ -24,21 +46,18 @@ export default function Header() {
       </a>
       <nav className="flex">
         <ul className="text-md flex items-center space-x-10">
-          <li>
-            <a href="#hero">INÍCIO</a>
-          </li>
-          <li>
-            <a href="#about">SOBRE</a>
-          </li>
-          <li>
-            <a href="#skills">HABILIDADES</a>
-          </li>
-          <li>
-            <a href="#projects">PROJETOS</a>
-          </li>
-          <li>
-            <a href="#contact">CONTATO</a>
-          </li>
+          {sections.map((section) => (
+            <li key={section.id}>
+              <a
+                href={`#${section.id}`}
+                className={`relative transition-colors duration-300 after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:bg-blue-500 after:transition-all after:duration-300 hover:text-blue-500 hover:after:w-full ${
+                  activeSection === section.id ? "after:w-full" : "after:w-0"
+                } `}
+              >
+                {section.label}
+              </a>
+            </li>
+          ))}
         </ul>
       </nav>
     </header>

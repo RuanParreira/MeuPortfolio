@@ -2,10 +2,7 @@ import Particles from "./Particles";
 
 export default function Contact() {
   return (
-    <section
-      id="contact"
-      className="relative h-[45rem] w-full scroll-mt-[6rem]"
-    >
+    <section id="contact" className="relative h-screen w-full scroll-mt-[2rem]">
       <Particles
         particleColors={["#ffffff", "#ffffff"]}
         particleCount={200}
@@ -17,7 +14,7 @@ export default function Contact() {
         disableRotation={true}
       />
 
-      <div className="pointer-events-none absolute top-0 left-0 z-[1] flex h-full w-full flex-col items-center px-[15%]">
+      <div className="pointer-events-none absolute top-0 left-0 z-[1] flex h-full w-full flex-col items-center justify-center px-[15%]">
         <div className="mb-10 flex flex-col items-center">
           <h6 className="text-4xl">CONTATO</h6>
           <span className="z-10 mt-4 mb-5 block h-1 w-24 bg-blue-500"></span>

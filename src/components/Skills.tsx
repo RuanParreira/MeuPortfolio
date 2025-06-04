@@ -6,7 +6,10 @@ export default function Skills() {
     <section id="skills" className="scroll-mt-[5rem] px-[15%] py-[5rem]">
       <div className="flex flex-col items-center justify-center">
         <h4 className="text-4xl">HABILIDADES</h4>
-        <span className="mt-4 mb-10 block h-1 w-24 bg-blue-500"></span>
+        <span className="mt-4 mb-4 block h-1 w-24 bg-blue-500"></span>
+        <p className="mb-10 text-xl">
+          Tecnologias e ferramentas que domino para criar soluções completas
+        </p>
         <div className="grid grid-cols-3 gap-10">
           <SkillCard
             title="Frontend"
