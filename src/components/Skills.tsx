@@ -3,10 +3,10 @@ import { useState } from "react";
 
 export default function Skills() {
   return (
-    <section id="skills" className="px-[15%] py-[5rem]">
+    <section id="skills" className="scroll-mt-[5rem] px-[15%] py-[5rem]">
       <div className="flex flex-col items-center justify-center">
         <h4 className="text-4xl">HABILIDADES</h4>
-        <span className="block w-24 h-1 bg-blue-500 mt-4 mb-10"></span>
+        <span className="mt-4 mb-10 block h-1 w-24 bg-blue-500"></span>
         <div className="grid grid-cols-3 gap-10">
           <SkillCard
             title="Frontend"
@@ -168,7 +168,7 @@ function SkillCard({
       >
         {icon}
       </motion.div>
-      <div className="text-xl space-y-2">
+      <div className="space-y-2 text-xl">
         <p className="font-bold">{title}</p>
         <p>{description}</p>
       </div>

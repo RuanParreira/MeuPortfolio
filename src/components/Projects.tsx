@@ -1,17 +1,17 @@
 export default function Projects() {
   return (
-    <section id="projects" className="px-[15%] ">
+    <section id="projects" className="px-[15%]">
       <h5>Projetos</h5>
       <div className="grid grid-cols-3 gap-10">
         <div className="projectCards">
           <img
             src="./print1.png"
             alt="Projeto1"
-            className="w-full object-cover h-[15rem] rounded-t-xl"
+            className="h-[15rem] w-full rounded-t-xl object-cover"
           />
-          <div className="flex flex-col px-5 space-y-5">
+          <div className="flex flex-col space-y-5 px-5">
             <div className="space-y-5">
-              <h5 className="font-bold text-xl">Organiza Lab</h5>
+              <h5 className="text-xl font-bold">Organiza Lab</h5>
               <p className="text-sm">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque
                 vero quia architecto minus doloremque, id recusandae illum iure!
@@ -69,11 +69,11 @@ export default function Projects() {
           <img
             src="./print1.png"
             alt="Projeto1"
-            className="w-full object-cover h-[15rem] rounded-t-xl"
+            className="h-[15rem] w-full rounded-t-xl object-cover"
           />
-          <div className="flex flex-col px-5 space-y-5">
+          <div className="flex flex-col space-y-5 px-5">
             <div className="space-y-5">
-              <h5 className="font-bold text-xl">Organiza Lab</h5>
+              <h5 className="text-xl font-bold">Organiza Lab</h5>
               <p className="text-sm">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque
                 vero quia architecto minus doloremque, id recusandae illum iure!
@@ -131,11 +131,11 @@ export default function Projects() {
           <img
             src="./print1.png"
             alt="Projeto1"
-            className="w-full object-cover h-[15rem] rounded-t-xl"
+            className="h-[15rem] w-full rounded-t-xl object-cover"
           />
-          <div className="flex flex-col px-5 space-y-5">
+          <div className="flex flex-col space-y-5 px-5">
             <div className="space-y-5">
-              <h5 className="font-bold text-xl">Organiza Lab</h5>
+              <h5 className="text-xl font-bold">Organiza Lab</h5>
               <p className="text-sm">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque
                 vero quia architecto minus doloremque, id recusandae illum iure!

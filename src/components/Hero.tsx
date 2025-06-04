@@ -2,24 +2,24 @@ import Button2 from "./Button2";
 
 export default function Hero() {
   return (
-    <section id="hero" className="h-[calc(100vh-5rem)] ">
+    <section id="hero" className="h-[calc(100vh-5rem)] scroll-mt-[5rem]">
       <div className="flex h-full space-x-[30rem]">
-        <div className="px-[15%] flex flex-col justify-center h-full gap-4">
+        <div className="flex h-full flex-col justify-center gap-4 px-[15%]">
           <h2 className="text-xl">SOFTWARE DEVELOPER</h2>
           <h2 className="text-5xl">
             Olá eu sou o Ruan, Desenvolvedor FullStack
           </h2>
-          <p className="text-xl text-justify">
+          <p className="text-justify text-xl">
             Atualmente cursando Sistemas de Informação na Uniube (5º período),
             desenvolvo soluções web, unindo programação e design. Também tenho
             experiência em manutenção de computadores, trazendo um olhar
             completo para tecnologia.
           </p>
-          <div className="flex justify-center flex-col gap-5 ">
-            <button className="bg-blue-500 text-zinc-900 font-bold w-60 h-10 text-lg rounded-md mt-5 cursor-pointer hover:bg-blue-800">
+          <div className="flex flex-col justify-center gap-5">
+            <button className="mt-5 h-10 w-60 cursor-pointer rounded-md bg-blue-500 text-lg font-bold text-zinc-900 hover:bg-blue-800">
               ENTRE EM CONTATO
             </button>
-            <div className="flex gap-5 ">
+            <div className="flex gap-5">
               <Button2>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -76,7 +76,7 @@ export default function Hero() {
         <img
           src="./teste.png"
           alt="Foto de Perfil"
-          className="h-[50rem] object-fill absolute bottom-0 right-0 z-0 mask-r-from-10% mask-l-from-80% mask-t-from-80%"
+          className="absolute right-0 bottom-0 z-0 h-[50rem] mask-t-from-80% mask-r-from-10% mask-l-from-80% object-fill"
         />
       </div>
       <a href="#about">

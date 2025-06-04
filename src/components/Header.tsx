@@ -13,31 +13,31 @@ export default function Header() {
 
   return (
     <header
-      className={`flex w-full justify-between h-[5rem] px-[15%] items-center sticky z-100 top-0 transition-colors duration-300 ${
+      className={`sticky top-0 z-100 flex h-[5rem] w-full items-center justify-between px-[15%] transition-colors duration-300 ${
         scrolled ? "bg-zinc-950" : ""
       }`}
     >
-      <a href="">
+      <a href="#hero">
         <h1 className="text-2xl">
           RUAN PARREIRA <span className="text-blue-500">.</span>
         </h1>
       </a>
       <nav className="flex">
-        <ul className="flex space-x-10 text-md items-center">
+        <ul className="text-md flex items-center space-x-10">
           <li>
-            <a href="">INÍCIO</a>
+            <a href="#hero">INÍCIO</a>
           </li>
           <li>
-            <a href="">SOBRE</a>
+            <a href="#about">SOBRE</a>
           </li>
           <li>
-            <a href="">HABILIDADES</a>
+            <a href="#skills">HABILIDADES</a>
           </li>
           <li>
-            <a href="">PROJETOS</a>
+            <a href="#projects">PROJETOS</a>
           </li>
           <li>
-            <a href="">CONTATO</a>
+            <a href="#contact">CONTATO</a>
           </li>
         </ul>
       </nav>

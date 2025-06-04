@@ -1,6 +1,6 @@
 export default function Button2({ children }: { children: React.ReactNode }) {
   return (
-    <button className="border-2 border-blue-500 rounded-full p-2 cursor-pointer hover:bg-blue-500 group">
+    <button className="group cursor-pointer rounded-full border-2 border-blue-500 p-2 hover:bg-blue-500">
       {children}
     </button>
   );

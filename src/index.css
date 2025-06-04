@@ -6,6 +6,10 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
   * {
     color: var(--textoPrincipal);
   }
@@ -17,14 +21,14 @@
 
 @layer components {
   .skillCards {
-    @apply bg-zinc-800 p-8 rounded-xl border border-zinc-700;
+    @apply rounded-xl border border-zinc-700 bg-zinc-800 p-8;
   }
 
   .projectCards {
-    @apply bg-zinc-800 flex flex-col space-y-5 rounded-xl border border-zinc-700;
+    @apply flex flex-col space-y-5 rounded-xl border border-zinc-700 bg-zinc-800;
   }
 
   .linguagens {
-    @apply bg-[#3F3F46] h-6 w-15 justify-center rounded-4xl flex items-center;
+    @apply flex h-6 w-15 items-center justify-center rounded-4xl bg-[#3F3F46];
   }
 }
