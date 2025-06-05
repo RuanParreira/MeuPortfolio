@@ -16,7 +16,6 @@ export default function Header() {
     function onScroll() {
       setScrolled(window.scrollY > 0);
 
-      // Detecta a seção ativa
       let current = "hero";
       for (const section of sections) {
         const el = document.getElementById(section.id);
@@ -40,8 +39,24 @@ export default function Header() {
       }`}
     >
       <a href="#hero">
-        <h1 className="text-2xl">
-          RUAN PARREIRA <span className="text-blue-500">.</span>
+        <h1 className="flex items-center gap-1 text-2xl">
+          RUAN PARREIRA
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="30"
+            height="30"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#2B7FFF"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            className="lucide lucide-code-xml-icon lucide-code-xml"
+          >
+            <path d="m18 16 4-4-4-4" />
+            <path d="m6 8-4 4 4 4" />
+            <path d="m14.5 4-5 16" />
+          </svg>
         </h1>
       </a>
       <nav className="flex">

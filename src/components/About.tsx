@@ -7,9 +7,9 @@ export default function About() {
       className="relative flex h-[calc(100vh-5rem)] w-full scroll-mt-[5rem] items-center justify-between space-x-20 bg-[#0f0f0f] px-[15%]"
     >
       <img
-        src="./cartoon.png"
+        src="./cartoon2.png"
         alt="fotoSobre"
-        className="h-[30rem] w-[50rem] mask-t-from-98% mask-r-from-98% mask-b-from-98% mask-l-from-98%"
+        className="h-[30rem] w-[50rem] rounded-xl"
       />
 
       <div className="z-10 flex w-[full] min-w-0 flex-col justify-center">
