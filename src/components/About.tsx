@@ -4,7 +4,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="scoll-mt-[5rem] relative flex h-screen w-full items-center justify-between space-x-[24rem] bg-[#0f0f0f]"
+      className="relative flex h-[calc(100vh-5rem)] w-full scroll-mt-[5rem] items-center justify-between space-x-[24rem] bg-[#0f0f0f]"
     >
       <div className="z-0">
         <img

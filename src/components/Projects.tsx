@@ -15,8 +15,7 @@ const projectsData = [
   {
     image: "./print1.png",
     title: "Organiza Lab",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque vero quia architecto minus doloremque, id recusandae illum iure! Molestias incidunt ipsa reprehenderit! Ad eum maiores quo ipsum quod libero voluptas!",
+    description: "Projeto de exemplo com React, Laravel e Next.",
     languages: ["React", "Laravel", "Next"],
     github: "",
     site: "",
@@ -24,8 +23,7 @@ const projectsData = [
   {
     image: "./print1.png",
     title: "Organiza Lab",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque vero quia architecto minus doloremque, id recusandae illum iure! Molestias incidunt ipsa reprehenderit! Ad eum maiores quo ipsum quod libero voluptas!",
+    description: "Projeto de exemplo com React, Laravel e Next.",
     languages: ["React", "Laravel", "Next"],
     github: "",
     site: "",
@@ -33,8 +31,7 @@ const projectsData = [
   {
     image: "./print1.png",
     title: "Organiza Lab",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque vero quia architecto minus doloremque, id recusandae illum iure! Molestias incidunt ipsa reprehenderit! Ad eum maiores quo ipsum quod libero voluptas!",
+    description: "Projeto de exemplo com React, Laravel e Next.",
     languages: ["React", "Laravel", "Next"],
     github: "",
     site: "",
@@ -42,8 +39,7 @@ const projectsData = [
   {
     image: "./print1.png",
     title: "Organiza Lab",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque vero quia architecto minus doloremque, id recusandae illum iure! Molestias incidunt ipsa reprehenderit! Ad eum maiores quo ipsum quod libero voluptas!",
+    description: "Projeto de exemplo com React, Laravel e Next.",
     languages: ["React", "Laravel", "Next"],
     github: "",
     site: "",
@@ -51,8 +47,7 @@ const projectsData = [
   {
     image: "./print1.png",
     title: "Organiza Lab",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque vero quia architecto minus doloremque, id recusandae illum iure! Molestias incidunt ipsa reprehenderit! Ad eum maiores quo ipsum quod libero voluptas!",
+    description: "Projeto de exemplo com React, Laravel e Next.",
     languages: ["React", "Laravel", "Next"],
     github: "",
     site: "",
@@ -60,8 +55,7 @@ const projectsData = [
   {
     image: "./print1.png",
     title: "Organiza Lab",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque vero quia architecto minus doloremque, id recusandae illum iure! Molestias incidunt ipsa reprehenderit! Ad eum maiores quo ipsum quod libero voluptas!",
+    description: "Projeto de exemplo com React, Laravel e Next.",
     languages: ["React", "Laravel", "Next"],
     github: "",
     site: "",
@@ -97,12 +91,14 @@ export default function Projects() {
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="h-full w-full rounded-t-xl object-cover"
+                  className="h-max w-full rounded-t-xl object-cover"
                 />
                 <div className="flex flex-col space-y-5 px-5">
                   <div className="space-y-5">
                     <h5 className="text-xl font-bold">{project.title}</h5>
-                    <p className="text-sm">{project.description}</p>
+                    <p className="h-[6rem] overflow-auto text-sm">
+                      {project.description}
+                    </p>
                   </div>
                   <div className="flex space-x-2">
                     {project.languages.map((lang, i) => (

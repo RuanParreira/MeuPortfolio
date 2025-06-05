@@ -2,7 +2,7 @@ import Particles from "./Particles";
 
 export default function Contact() {
   return (
-    <section id="contact" className="relative h-screen w-full scroll-mt-[2rem]">
+    <section id="contact" className="relative h-[calc(100vh-5rem)] w-full">
       <Particles
         particleColors={["#ffffff", "#ffffff"]}
         particleCount={200}
