@@ -1,6 +1,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
+import "swiper/css/pagination";
 import { Navigation, Pagination } from "swiper/modules";
 import { motion } from "framer-motion";
 import { useRef } from "react";
@@ -17,7 +18,7 @@ const projectsData = [
   {
     image: "./print1.png",
     title: "Organiza Lab",
-    description: "Projeto de exemplo com React, Laravel e Next.",
+    description: "texo",
     languages: ["React", "Laravel", "Next"],
     github: "",
     site: "",
@@ -25,7 +26,7 @@ const projectsData = [
   {
     image: "./print1.png",
     title: "Organiza Lab",
-    description: "Projeto de exemplo com React, Laravel e Next.",
+    description: "texo",
     languages: ["React", "Laravel", "Next"],
     github: "",
     site: "",
@@ -33,7 +34,7 @@ const projectsData = [
   {
     image: "./print1.png",
     title: "Organiza Lab",
-    description: "Projeto de exemplo com React, Laravel e Next.",
+    description: "texo",
     languages: ["React", "Laravel", "Next"],
     github: "",
     site: "",
@@ -41,27 +42,12 @@ const projectsData = [
   {
     image: "./print1.png",
     title: "Organiza Lab",
-    description: "Projeto de exemplo com React, Laravel e Next.",
+    description: "texo",
     languages: ["React", "Laravel", "Next"],
     github: "",
     site: "",
   },
-  {
-    image: "./print1.png",
-    title: "Organiza Lab",
-    description: "Projeto de exemplo com React, Laravel e Next.",
-    languages: ["React", "Laravel", "Next"],
-    github: "",
-    site: "",
-  },
-  {
-    image: "./print1.png",
-    title: "Organiza Lab",
-    description: "Projeto de exemplo com React, Laravel e Next.",
-    languages: ["React", "Laravel", "Next"],
-    github: "",
-    site: "",
-  },
+
   // Adicione outros projetos aqui
 ];
 
@@ -83,12 +69,12 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="flex w-full scroll-mt-[5rem] flex-col items-center justify-center bg-[#0F0F0F] px-[15%] py-20"
+      className="flex w-full scroll-mt-[4rem] flex-col items-center justify-center bg-[#0F0F0F] px-[4%] py-10 lg:scroll-mt-[5rem] lg:px-[15%] lg:py-20"
     >
       <div className="flex flex-col items-center">
         <h5 className="text-4xl">PROJETOS</h5>
         <span className="mt-4 block h-1 w-24 bg-blue-500"></span>
-        <p className="mt-4 text-xl">
+        <p className="mt-4 mb-4 text-center text-xl lg:mb-0 lg:text-left">
           Alguns dos projetos que desenvolvi recentemente
         </p>
       </div>
@@ -99,7 +85,7 @@ export default function Projects() {
           whileHover={{ scale: 1.4 }} // aumenta e muda cor ao passar o mouse
           transition={{ type: "spring", stiffness: 300 }}
           whileTap={{ scale: 0.9 }} // efeito ao clicar
-          className="transitio absolute top-1/2 left-[-40px] z-10 -translate-y-1/2 cursor-pointer text-white"
+          className="transitio absolute top-1/2 -left-[1.5rem] z-10 -translate-y-1/2 cursor-pointer text-white lg:left-[-2.5rem]"
         >
           {/* Ícone de seta para a esquerda */}
           <svg
@@ -119,7 +105,7 @@ export default function Projects() {
           whileHover={{ scale: 1.4 }}
           transition={{ type: "spring", stiffness: 300 }}
           whileTap={{ scale: 0.9 }}
-          className="absolute top-1/2 right-[-40px] z-10 -translate-y-1/2 cursor-pointer text-white"
+          className="absolute top-1/2 -right-[1.5rem] z-10 -translate-y-1/2 cursor-pointer text-white lg:right-[-2.5rem]"
         >
           {/* Ícone de seta para a direita */}
           <svg
@@ -142,6 +128,12 @@ export default function Projects() {
             prevEl: prevRef.current,
             nextEl: nextRef.current,
           }}
+          breakpoints={{
+            0: { slidesPerView: 1 }, // até 640px: 1 card
+            640: { slidesPerView: 1 }, // até 768px: 1 card
+            768: { slidesPerView: 2 }, // até 1024px: 2 cards
+            1024: { slidesPerView: 3 }, // acima de 1024px: 3 cards
+          }}
           onInit={(swiper) => {
             // @ts-ignore
             swiper.params.navigation.prevEl = prevRef.current;
@@ -153,7 +145,7 @@ export default function Projects() {
           pagination={{ clickable: true }}
         >
           {projectsData.map((project, idx) => (
-            <SwiperSlide key={idx} className="px-[1rem] py-8">
+            <SwiperSlide key={idx} className="px-[1rem] py-6">
               <motion.div
                 className="projectCards"
                 variants={cardVariants}

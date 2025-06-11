@@ -2,7 +2,10 @@ import Particles from "./Particles";
 
 export default function Contact() {
   return (
-    <section id="contact" className="relative h-[calc(100vh-5rem)] w-full">
+    <section
+      id="contact"
+      className="relative h-[1000px] w-full scroll-mt-[4rem] lg:h-[calc(100vh-5rem)] lg:scroll-mt-0"
+    >
       <Particles
         particleColors={["#ffffff", "#ffffff"]}
         particleCount={200}
@@ -14,14 +17,16 @@ export default function Contact() {
         disableRotation={true}
       />
 
-      <div className="pointer-events-none absolute top-0 left-0 z-[1] flex h-full w-full flex-col items-center justify-center px-[15%]">
+      <div className="pointer-events-none absolute top-0 left-0 z-[1] flex w-full flex-col items-center justify-center px-[4%] py-10 lg:h-full lg:px-[15%] lg:py-0">
         <div className="mb-10 flex flex-col items-center">
           <h6 className="text-4xl">CONTATO</h6>
           <span className="z-10 mt-4 mb-5 block h-1 w-24 bg-blue-500"></span>
-          <p className="text-xl">Vamos conversar sobre seu próximo projeto</p>
+          <p className="text-center text-xl lg:text-left">
+            Vamos conversar sobre seu próximo projeto
+          </p>
         </div>
         {/* formulario */}
-        <div className="flex w-full justify-between space-y-20 space-x-20">
+        <div className="flex w-full flex-col justify-between space-y-10 lg:flex-row lg:space-y-20 lg:space-x-20">
           <div className="flex flex-col space-y-5">
             <p className="text-2xl">Vamos Trabalhar juntos!</p>
             <p className="text-justify text-lg">
@@ -43,13 +48,14 @@ export default function Contact() {
                 <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" />
                 <rect x="2" y="4" width="20" height="16" rx="2" />
               </svg>
-              <div className="flex flex-col">
-                <span className="font-bold">Email</span>
+              <div>
                 <a
-                  href="ruanparreira22@gmail.com"
-                  className="pointer-events-auto"
+                  href="mailto:ruanparreira22@gmail.com"
+                  className="pointer-events-auto flex flex-col"
                 >
-                  ruanparreira22@gmail.com
+                  <span className="font-bold">Email</span>
+
+                  <span> ruanparreira22@gmail.com</span>
                 </a>
               </div>
             </div>
@@ -66,20 +72,20 @@ export default function Contact() {
               >
                 <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" />
               </svg>
-              <div className="flex flex-col">
-                <span className="font-bold">Telefone</span>
+              <div>
                 <a
-                  href="ruanparreira22@gmail.com"
-                  className="pointer-events-auto"
+                  href="tel:+5516991771565"
+                  className="pointer-events-auto flex flex-col"
                 >
-                  +55 (16) 99177-1565
+                  <span className="font-bold">Telefone</span>
+                  <span>+55 (16) 99177-1565</span>
                 </a>
               </div>
             </div>
           </div>
           <form
-            action=""
-            className="pointer-events-auto flex w-[90rem] flex-col space-y-4 rounded-xl border border-zinc-700 bg-zinc-800 p-8"
+            action="#"
+            className="pointer-events-auto flex w-full flex-col space-y-4 rounded-xl border border-zinc-700 bg-zinc-800 p-8 lg:w-[90rem]"
           >
             <div className="flex flex-col space-y-2">
               <label htmlFor="nome">Nome:</label>

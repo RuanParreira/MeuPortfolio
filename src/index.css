@@ -36,3 +36,12 @@
     @apply flex items-center justify-center rounded-4xl bg-[#3F3F46] px-3 py-1 text-xs;
   }
 }
+
+.swiper-pagination-bullet {
+  background: #fff !important; /* bolinhas inativas brancas */
+  opacity: 1 !important; /* para não ficarem transparentes */
+}
+
+.swiper-pagination-bullet-active {
+  background: #3b82f6 !important; /* bolinha ativa azul (tailwind blue-500) */
+}

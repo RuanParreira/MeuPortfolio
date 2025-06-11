@@ -46,7 +46,7 @@ export default function Tecs() {
   }, [controls]);
 
   return (
-    <div className="relative w-full overflow-x-hidden bg-transparent py-4">
+    <div className="relative w-full overflow-x-hidden bg-transparent lg:py-4">
       <motion.div
         className="flex gap-8 whitespace-nowrap"
         animate={controls}

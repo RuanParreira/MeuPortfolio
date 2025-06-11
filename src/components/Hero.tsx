@@ -3,20 +3,21 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section id="hero" className="h-[calc(100vh-5rem)] scroll-mt-[5rem]">
-      <div className="flex h-full space-x-[30rem]">
-        <div className="flex h-full flex-col justify-center gap-4 px-[15%]">
-          <h2 className="text-xl">SOFTWARE DEVELOPER</h2>
-          <h2 className="text-5xl">
-            Olá eu sou o Ruan, Desenvolvedor FullStack
+    <section
+      id="hero"
+      className="mb-5 scroll-mt-[4rem] px-[4%] py-10 lg:mb-0 lg:h-[calc(100vh-5rem)] lg:scroll-mt-[5rem] lg:px-0 lg:py-0"
+    >
+      <div className="flex h-full flex-col-reverse lg:flex-row lg:space-x-[30rem]">
+        <div className="flex h-full flex-col justify-center gap-4 lg:px-[15%]">
+          <h2 className="lg:text-xl">SOFTWARE DEVELOPER</h2>
+          <h2 className="text-4xl lg:text-5xl">
+            Olá, eu sou o Ruan, Desenvolvedor FullStack
           </h2>
-          <p className="text-justify text-xl">
-            Atualmente cursando Sistemas de Informação na Uniube (5º período),
-            desenvolvo soluções web, unindo programação e design. Também tenho
-            experiência em manutenção de computadores, trazendo um olhar
-            completo para tecnologia.
+          <p className="text-xl lg:text-justify">
+            Transformo ideias em experiências digitais — Unindo programação,
+            design gráfico e paixão por tecnologias!
           </p>
-          <div className="flex flex-col justify-center gap-5">
+          <div className="flex flex-col items-center justify-center gap-5 lg:items-start">
             <a
               href="#contact"
               className="mt-5 flex h-10 w-60 cursor-pointer items-center justify-center rounded-md bg-blue-500 text-lg font-bold text-zinc-900 hover:bg-blue-800"
@@ -98,7 +99,7 @@ export default function Hero() {
         <img
           src="./hero.png"
           alt="Foto de Perfil"
-          className="absolute right-0 bottom-0 z-0 h-full mask-t-from-80% mask-r-from-10% mask-l-from-80% object-fill"
+          className="right-0 bottom-0 z-0 mask-t-from-80% mask-r-from-10% mask-l-from-80% object-fill lg:absolute lg:h-full"
         />
       </div>
       <a href="#about">
@@ -112,7 +113,7 @@ export default function Hero() {
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          className="lucide lucide-arrow-down-icon lucide-arrow-down absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce hover:animate-none hover:stroke-blue-500"
+          className="lucide lucide-arrow-down-icon lucide-arrow-down bottom-0 left-1/2 hidden -translate-x-1/2 animate-bounce hover:animate-none hover:stroke-blue-500 lg:absolute lg:bottom-10 lg:block"
           whileHover={{ scale: 1.5 }}
           transition={{ type: "spring", stiffness: 300 }}
         >

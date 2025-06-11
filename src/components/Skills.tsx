@@ -3,14 +3,17 @@ import { useState } from "react";
 
 export default function Skills() {
   return (
-    <section id="skills" className="scroll-mt-[5rem] px-[15%] py-[5rem]">
+    <section
+      id="skills"
+      className="scroll-mt-[4rem] px-[4%] py-10 lg:scroll-mt-[5rem] lg:px-[15%] lg:py-[5rem]"
+    >
       <div className="flex flex-col items-center justify-center">
         <h4 className="text-4xl">HABILIDADES</h4>
         <span className="mt-4 mb-4 block h-1 w-24 bg-blue-500"></span>
-        <p className="mb-10 text-xl">
+        <p className="mb-10 text-center text-xl lg:text-left">
           Tecnologias e ferramentas que domino para criar soluções completas
         </p>
-        <div className="grid grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
           <SkillCard
             title="Frontend"
             description="React, NextJs, Tailwind CSS"
