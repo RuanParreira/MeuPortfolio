@@ -4,10 +4,10 @@ export default function About() {
   return (
     <section
       id="about"
-      className="relative flex h-[calc(100vh-5rem)] w-full scroll-mt-[5rem] items-center justify-between space-x-20 bg-[#0f0f0f] px-[15%]"
+      className="relative flex w-full scroll-mt-[5rem] items-center justify-between space-x-20 bg-[#0f0f0f] px-[15%] py-20"
     >
       <img
-        src="./cartoon2.png"
+        src="./about.png"
         alt="fotoSobre"
         className="h-[30rem] w-[50rem] rounded-xl"
       />

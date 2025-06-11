@@ -29,7 +29,7 @@
   }
 
   .projectCards {
-    @apply flex h-[28rem] flex-1 flex-col space-y-5 rounded-xl border border-zinc-700 bg-zinc-800 pb-5;
+    @apply flex h-[30rem] w-full flex-1 flex-col space-y-5 overflow-hidden rounded-xl border border-zinc-700 bg-zinc-800 pb-5;
   }
 
   .linguagens {

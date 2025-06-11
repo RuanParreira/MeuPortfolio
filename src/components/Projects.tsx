@@ -2,6 +2,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation, Pagination } from "swiper/modules";
+import { motion } from "framer-motion";
+import { useRef } from "react";
 
 const projectsData = [
   {
@@ -63,7 +65,21 @@ const projectsData = [
   // Adicione outros projetos aqui
 ];
 
+// Defina os variants fora do componente
+const cardVariants = {
+  initial: { scale: 1 },
+  hover: { scale: 1.07, boxShadow: "0 8px 32px 0 rgba(0, 0, 0, 0.37)" },
+};
+
+const imageVariants = {
+  initial: { scale: 1 },
+  hover: { scale: 1.1 },
+};
+
 export default function Projects() {
+  const prevRef = useRef(null);
+  const nextRef = useRef(null);
+
   return (
     <section
       id="projects"
@@ -76,23 +92,84 @@ export default function Projects() {
           Alguns dos projetos que desenvolvi recentemente
         </p>
       </div>
-      <div className="w-full">
+      <div className="relative w-full">
+        {/* Setas personalizadas */}
+        <motion.button
+          ref={prevRef}
+          whileHover={{ scale: 1.4 }} // aumenta e muda cor ao passar o mouse
+          transition={{ type: "spring", stiffness: 300 }}
+          whileTap={{ scale: 0.9 }} // efeito ao clicar
+          className="transitio absolute top-1/2 left-[-40px] z-10 -translate-y-1/2 cursor-pointer text-white"
+        >
+          {/* Ícone de seta para a esquerda */}
+          <svg
+            width="50"
+            height="50"
+            fill="none"
+            stroke="#ffffff"
+            strokeWidth="2"
+            viewBox="0 0 24 24"
+            className="hover:stroke-blue-500"
+          >
+            <path d="M15 18l-6-6 6-6" />
+          </svg>
+        </motion.button>
+        <motion.button
+          ref={nextRef}
+          whileHover={{ scale: 1.4 }}
+          transition={{ type: "spring", stiffness: 300 }}
+          whileTap={{ scale: 0.9 }}
+          className="absolute top-1/2 right-[-40px] z-10 -translate-y-1/2 cursor-pointer text-white"
+        >
+          {/* Ícone de seta para a direita */}
+          <svg
+            width="50"
+            height="50"
+            fill="none"
+            stroke="#ffffff"
+            strokeWidth="2"
+            viewBox="0 0 24 24"
+            className="hover:stroke-blue-500"
+          >
+            <path d="M9 18l6-6-6-6" />
+          </svg>
+        </motion.button>
         <Swiper
           modules={[Navigation, Pagination]}
-          spaceBetween={30}
+          spaceBetween={0}
           slidesPerView={3}
-          navigation
+          navigation={{
+            prevEl: prevRef.current,
+            nextEl: nextRef.current,
+          }}
+          onInit={(swiper) => {
+            // @ts-ignore
+            swiper.params.navigation.prevEl = prevRef.current;
+            // @ts-ignore
+            swiper.params.navigation.nextEl = nextRef.current;
+            swiper.navigation.init();
+            swiper.navigation.update();
+          }}
           pagination={{ clickable: true }}
-          className="my-10"
         >
           {projectsData.map((project, idx) => (
-            <SwiperSlide key={idx}>
-              <div className="projectCards">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="h-max w-full rounded-t-xl object-cover"
-                />
+            <SwiperSlide key={idx} className="px-[1rem] py-8">
+              <motion.div
+                className="projectCards"
+                variants={cardVariants}
+                initial="initial"
+                whileHover="hover"
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <div className="h-80 overflow-hidden">
+                  <motion.img
+                    src={project.image}
+                    alt={project.title}
+                    className="h-full w-full rounded-t-xl object-cover"
+                    variants={imageVariants}
+                    transition={{ type: "tween", duration: 0.2 }}
+                  />
+                </div>
                 <div className="flex flex-col space-y-5 px-5">
                   <div className="space-y-5">
                     <h5 className="text-xl font-bold">{project.title}</h5>
@@ -119,9 +196,9 @@ export default function Projects() {
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="#ffffff"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                         className="lucide lucide-github-icon lucide-github"
                       >
                         <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
@@ -137,9 +214,9 @@ export default function Projects() {
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="#ffffff"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                         className="lucide lucide-external-link-icon lucide-external-link"
                       >
                         <path d="M15 3h6v6" />
@@ -150,7 +227,7 @@ export default function Projects() {
                     </a>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             </SwiperSlide>
           ))}
         </Swiper>
