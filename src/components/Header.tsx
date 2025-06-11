@@ -133,9 +133,9 @@ export default function Header() {
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: -40, opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed top-[4rem] right-0 left-0 z-50 flex flex-col gap-6 rounded-b-xl bg-zinc-950 p-6 text-center shadow-lg lg:hidden"
+            className="fixed top-[4rem] right-0 left-0 z-50 flex w-full flex-col gap-6 rounded-b-xl bg-zinc-950 p-6 text-center shadow-lg lg:hidden"
           >
-            <ul className="flex flex-col gap-4 text-lg">
+            <ul className="flex w-full flex-col gap-4 text-lg">
               {sections.map((section) => (
                 <li key={section.id}>
                   <a

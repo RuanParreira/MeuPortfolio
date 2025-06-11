@@ -85,7 +85,7 @@ export default function Projects() {
           whileHover={{ scale: 1.4 }} // aumenta e muda cor ao passar o mouse
           transition={{ type: "spring", stiffness: 300 }}
           whileTap={{ scale: 0.9 }} // efeito ao clicar
-          className="transitio absolute top-1/2 -left-[1.5rem] z-10 -translate-y-1/2 cursor-pointer text-white lg:left-[-2.5rem]"
+          className="transitio absolute top-1/2 -left-[1rem] z-10 -translate-y-1/2 cursor-pointer text-white lg:left-[-2.5rem]"
         >
           {/* Ícone de seta para a esquerda */}
           <svg
@@ -105,7 +105,7 @@ export default function Projects() {
           whileHover={{ scale: 1.4 }}
           transition={{ type: "spring", stiffness: 300 }}
           whileTap={{ scale: 0.9 }}
-          className="absolute top-1/2 -right-[1.5rem] z-10 -translate-y-1/2 cursor-pointer text-white lg:right-[-2.5rem]"
+          className="absolute top-1/2 -right-[1rem] z-10 -translate-y-1/2 cursor-pointer text-white lg:right-[-2.5rem]"
         >
           {/* Ícone de seta para a direita */}
           <svg
