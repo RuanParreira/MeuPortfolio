@@ -22,7 +22,7 @@ export default function Header() {
       for (const section of sections) {
         const el = document.getElementById(section.id);
         if (el) {
-          const offset = el.offsetTop - 80;
+          const offset = el.offsetTop - 90;
           if (window.scrollY >= offset) {
             current = section.id;
           }

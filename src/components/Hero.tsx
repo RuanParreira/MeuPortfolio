@@ -1,7 +1,23 @@
+import { useEffect, useState } from "react";
 import Button from "./Button";
 import { motion } from "framer-motion";
 
+const typewriterText = "Olá, eu sou o Ruan, Desenvolvedor FullStack";
+
 export default function Hero() {
+  const [displayedText, setDisplayedText] = useState("");
+
+  useEffect(() => {
+    let currentIndex = 0;
+    const interval = setInterval(() => {
+      setDisplayedText(typewriterText.slice(0, currentIndex + 1));
+      currentIndex++;
+      if (currentIndex === typewriterText.length) clearInterval(interval);
+    }, 60); // velocidade do efeito
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section
       id="hero"
@@ -11,7 +27,14 @@ export default function Hero() {
         <div className="flex h-full flex-col justify-center gap-4 lg:px-[15%]">
           <h2 className="lg:text-xl">SOFTWARE DEVELOPER</h2>
           <h2 className="text-4xl lg:text-5xl">
-            Olá, eu sou o Ruan, Desenvolvedor FullStack
+            <motion.span
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
+            >
+              {displayedText}
+              <span className="animate-pulse text-blue-500">|</span>
+            </motion.span>
           </h2>
           <p className="text-xl lg:text-justify">
             Transformo ideias em experiências digitais — Unindo programação,

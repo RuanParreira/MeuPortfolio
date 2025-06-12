@@ -38,10 +38,10 @@
 }
 
 .swiper-pagination-bullet {
-  background: #fff !important; /* bolinhas inativas brancas */
-  opacity: 1 !important; /* para não ficarem transparentes */
+  background: #fff !important;
+  opacity: 1 !important;
 }
 
 .swiper-pagination-bullet-active {
-  background: #3b82f6 !important; /* bolinha ativa azul (tailwind blue-500) */
+  background: #3b82f6 !important;
 }
