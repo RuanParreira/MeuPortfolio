@@ -8,44 +8,31 @@ import { useRef } from "react";
 
 const projectsData = [
   {
-    image: "./print1.png",
-    title: "Organiza Lab",
-    description: "texo",
-    languages: ["React", "Laravel", "Next"],
-    github: "",
-    site: "",
+    image: "./bannerOrganizaLab.jpg",
+    title: "OrganizaLab",
+    description:
+      "O OrganizaLAB ajuda a gerenciar laboratórios de informática de forma prática e organizada, facilitando o controle de equipamentos",
+    languages: ["HTML", "CSS", "PHP"],
+    github: "https://github.com/RuanParreira/OrganizaLAB",
+    site: "https://organizalab.site/",
   },
   {
-    image: "./print1.png",
-    title: "Organiza Lab",
-    description: "texo",
-    languages: ["React", "Laravel", "Next"],
-    github: "",
-    site: "",
+    image: "./siteEtec2.png",
+    title: "Etec Igarapava",
+    description:
+      "Site limpo e funcional desenvolvido para facilitar o acesso à informação por alunos e professores da Etec Antônio Junqueira da Veiga, em Igarapava.",
+    languages: ["HTML", "CSS"],
+    github: "https://github.com/EtecIgarapava/site-etec",
+    site: "https://etecigarapava.github.io/site-etec/",
   },
   {
-    image: "./print1.png",
-    title: "Organiza Lab",
-    description: "texo",
-    languages: ["React", "Laravel", "Next"],
-    github: "",
-    site: "",
-  },
-  {
-    image: "./print1.png",
-    title: "Organiza Lab",
-    description: "texo",
-    languages: ["React", "Laravel", "Next"],
-    github: "",
-    site: "",
-  },
-  {
-    image: "./print1.png",
-    title: "Organiza Lab",
-    description: "texo",
-    languages: ["React", "Laravel", "Next"],
-    github: "",
-    site: "",
+    image: "./portfolioAndre.png",
+    title: "Portfólio Andre",
+    description:
+      "Portfólio fictício criado para o desenvolvedor André, com foco em treinar Tailwind CSS e aplicar um web design moderno e responsivo.",
+    languages: ["HTML", "Tailwindcss"],
+    github: "https://github.com/RuanParreira/PortfolioAndre",
+    site: "https://ruanparreira.github.io/PortfolioAndre/",
   },
 
   // Adicione outros projetos aqui
@@ -145,7 +132,7 @@ export default function Projects() {
           pagination={{ clickable: true }}
         >
           {projectsData.map((project, idx) => (
-            <SwiperSlide key={idx} className="px-[1rem] py-6">
+            <SwiperSlide key={idx} className="mb-8 px-[1rem] py-6">
               <motion.div
                 className="projectCards"
                 variants={cardVariants}
@@ -165,7 +152,7 @@ export default function Projects() {
                 <div className="flex flex-col space-y-5 px-5">
                   <div className="space-y-5">
                     <h5 className="text-xl font-bold">{project.title}</h5>
-                    <p className="h-[6rem] overflow-auto text-sm">
+                    <p className="h-[6.5rem] overflow-auto text-sm">
                       {project.description}
                     </p>
                   </div>
@@ -180,6 +167,8 @@ export default function Projects() {
                     <a
                       href={project.github}
                       className="flex items-center gap-1"
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -198,7 +187,12 @@ export default function Projects() {
                       </svg>
                       Git
                     </a>
-                    <a href={project.site} className="flex items-center gap-1">
+                    <a
+                      href={project.site}
+                      className="flex items-center gap-1"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="15"
