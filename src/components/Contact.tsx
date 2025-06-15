@@ -4,20 +4,23 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative h-[1000px] w-full scroll-mt-[4rem] lg:h-[calc(100vh-5rem)] lg:scroll-mt-0"
+      className="relative w-full scroll-mt-20 overflow-hidden py-10 lg:scroll-mt-20 lg:py-20"
     >
-      <Particles
-        particleColors={["#ffffff", "#ffffff"]}
-        particleCount={200}
-        particleSpread={10}
-        speed={0.1}
-        particleBaseSize={100}
-        moveParticlesOnHover={true}
-        alphaParticles={false}
-        disableRotation={true}
-      />
-
-      <div className="pointer-events-none absolute top-0 left-0 z-[1] flex w-full flex-col items-center justify-center px-[4%] py-10 lg:h-full lg:px-[15%] lg:py-0">
+      {/* Particles como background */}
+      <div className="absolute inset-0 z-0">
+        <Particles
+          particleColors={["#ffffff", "#ffffff"]}
+          particleCount={200}
+          particleSpread={10}
+          speed={0.1}
+          particleBaseSize={100}
+          moveParticlesOnHover={true}
+          alphaParticles={false}
+          disableRotation={false}
+        />
+      </div>
+      {/* Conteúdo acima das partículas */}
+      <div className="pointer-events-none relative z-[1] flex w-full flex-col items-center justify-center px-[4%] py-10 lg:h-full lg:px-[15%] lg:py-0">
         <div className="mb-10 flex flex-col items-center">
           <h6 className="text-4xl">CONTATO</h6>
           <span className="z-10 mt-4 mb-5 block h-1 w-24 bg-blue-500"></span>
