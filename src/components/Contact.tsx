@@ -1,11 +1,61 @@
+import { useRef, useState } from "react";
+import emailjs from "emailjs-com";
 import Particles from "./Particles";
 
 export default function Contact() {
+  const form = useRef<HTMLFormElement>(null);
+  const [successMsg, setSuccessMsg] = useState(false);
+
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!form.current) return;
+
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    // @ts-ignore
+    emailjs.sendForm(serviceId, templateId, form.current, publicKey).then(
+      () => {
+        setSuccessMsg(true);
+        setTimeout(() => setSuccessMsg(false), 3000); // Esconde após 3 segundos
+        form.current?.reset();
+      },
+      (error) => {
+        alert("Erro ao enviar mensagem: " + error.text);
+        console.error("Erro EmailJS:", error);
+      },
+    );
+  };
+
   return (
     <section
       id="contact"
       className="relative w-full scroll-mt-20 overflow-hidden py-10 lg:scroll-mt-20 lg:py-20"
     >
+      {/* Mensagem de sucesso fixa no topo */}
+      {successMsg && (
+        <div className="pointer-events-none fixed top-0 left-0 z-[9999] flex w-full justify-center">
+          <div className="pointer-events-auto relative mt-4 overflow-hidden rounded-sm bg-blue-500 px-6 py-3 text-center text-lg text-white shadow-lg">
+            Mensagem enviada com sucesso!
+            {/* Barra de progresso animada */}
+            <div className="absolute bottom-0 left-0 h-1 w-full bg-blue-300">
+              <div
+                className="h-full bg-white transition-all duration-[4000ms]"
+                style={{ animation: "progressBar 3s linear forwards" }}
+              />
+            </div>
+            <style>
+              {`
+                @keyframes progressBar {
+                  from { width: 100%; }
+                  to { width: 0%; }
+                }
+              `}
+            </style>
+          </div>
+        </div>
+      )}
       {/* Particles como background */}
       <div className="absolute inset-0 z-0">
         <Particles
@@ -87,7 +137,8 @@ export default function Contact() {
             </div>
           </div>
           <form
-            action="#"
+            ref={form}
+            onSubmit={sendEmail}
             className="pointer-events-auto flex w-full flex-col space-y-4 rounded-xl border border-zinc-700 bg-zinc-800 p-8 lg:w-[90rem]"
           >
             <div className="flex flex-col space-y-2">
@@ -120,7 +171,10 @@ export default function Contact() {
                 className="mb-2 w-full resize-none rounded-xl border border-zinc-600 bg-zinc-700 p-3 focus:ring-2 focus:ring-blue-500 focus:outline-none"
               />
             </div>
-            <button type="submit" className="h-14 rounded-xl bg-blue-500">
+            <button
+              type="submit"
+              className="h-14 cursor-pointer rounded-xl bg-blue-500 font-bold text-zinc-900 uppercase hover:bg-blue-600"
+            >
               Enviar Mensagem
             </button>
           </form>
