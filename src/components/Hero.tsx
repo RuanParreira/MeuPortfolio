@@ -1,41 +1,18 @@
-import { useEffect, useState } from "react";
 import Button from "./Button";
 import { motion } from "framer-motion";
 import Curriculo from "./Curriculo";
 
-const typewriterText = "Olá, eu sou o Ruan, Desenvolvedor FullStack";
-
 export default function Hero() {
-  const [displayedText, setDisplayedText] = useState("");
-
-  useEffect(() => {
-    let currentIndex = 0;
-    const interval = setInterval(() => {
-      setDisplayedText(typewriterText.slice(0, currentIndex + 1));
-      currentIndex++;
-      if (currentIndex === typewriterText.length) clearInterval(interval);
-    }, 60);
-
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <section
       id="hero"
       className="mb-5 scroll-mt-[4rem] px-[4%] py-10 lg:mb-0 lg:h-[calc(100vh-5rem)] lg:scroll-mt-[5rem] lg:px-0 lg:py-0"
     >
-      <div className="flex h-full flex-col-reverse lg:flex-row lg:space-x-[30rem]">
+      <div className="flex h-full flex-col-reverse items-center lg:flex-row lg:space-x-[30rem]">
         <div className="flex h-full flex-col justify-center gap-4 lg:px-[15%]">
           <h2 className="lg:text-xl">SOFTWARE DEVELOPER</h2>
           <h2 className="text-4xl lg:text-5xl">
-            <motion.span
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5 }}
-            >
-              {displayedText}
-              <span className="animate-pulse text-blue-500">|</span>
-            </motion.span>
+            <h2>Olá, eu sou o Ruan, Desenvolvedor FullStack</h2>
           </h2>
           <p className="text-xl lg:text-justify">
             Transformo ideias em experiências digitais — Unindo programação,
@@ -141,7 +118,7 @@ export default function Hero() {
         <img
           src="./hero.webp"
           alt="Foto de Perfil"
-          className="right-0 bottom-0 z-0 h-full w-full mask-t-from-80% mask-r-from-10% mask-l-from-80% object-fill lg:absolute lg:h-full lg:w-auto"
+          className="h-80 w-70 mask-t-from-80% mask-r-from-10% mask-l-from-80% lg:absolute lg:right-0 lg:bottom-0 lg:z-0 lg:h-full lg:w-auto"
         />
       </div>
       <a href="#about">
