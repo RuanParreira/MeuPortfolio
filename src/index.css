@@ -45,3 +45,87 @@
 .swiper-pagination-bullet-active {
   background: #3b82f6 !important;
 }
+
+/* Curriculo */
+
+@layer components {
+  .button {
+    @apply relative h-10 w-40 rounded-md border-2 border-blue-500 text-center text-lg transition-colors duration-300;
+  }
+
+  .button::before {
+    @apply absolute rounded-[0.25em] bg-white text-[0.9rem] leading-[35px] text-[#111];
+    content: attr(data-tooltip);
+    width: 90px;
+    height: 35px;
+    left: 50%;
+    bottom: calc(100% + 18px + 10px);
+    transform: translateX(-50%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s;
+    z-index: 10;
+  }
+
+  .button::after {
+    @apply absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent;
+    border-top-color: #fff;
+    left: 50%;
+    bottom: calc(100% + 18px - 10px);
+    transform: translateX(-10px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s;
+    z-index: 10;
+  }
+
+  .button-wrapper,
+  .text,
+  .icon {
+    @apply absolute left-0 h-full w-full overflow-hidden font-bold text-white;
+  }
+
+  .text {
+    @apply top-0 flex items-center justify-center transition-[top] duration-500;
+  }
+
+  .icon {
+    @apply top-full flex items-center justify-center text-zinc-900 transition-[top] duration-500;
+  }
+
+  .icon svg {
+    @apply h-6 w-6;
+  }
+
+  .button:hover {
+    @apply border-blue-800 bg-blue-800;
+  }
+
+  .button:hover .text {
+    top: -100%;
+  }
+
+  .button:hover .icon {
+    top: 0;
+  }
+
+  .button:hover::before,
+  .button:hover::after {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .button:hover::after {
+    bottom: calc(100% + 18px - 20px);
+  }
+
+  .button:hover::before {
+    bottom: calc(100% + 18px);
+  }
+}

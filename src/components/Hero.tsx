@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Button from "./Button";
 import { motion } from "framer-motion";
+import Curriculo from "./Curriculo";
 
 const typewriterText = "Olá, eu sou o Ruan, Desenvolvedor FullStack";
 
@@ -13,7 +14,7 @@ export default function Hero() {
       setDisplayedText(typewriterText.slice(0, currentIndex + 1));
       currentIndex++;
       if (currentIndex === typewriterText.length) clearInterval(interval);
-    }, 60); // velocidade do efeito
+    }, 60);
 
     return () => clearInterval(interval);
   }, []);
@@ -41,14 +42,28 @@ export default function Hero() {
             design gráfico e paixão por tecnologias!
           </p>
           <div className="flex flex-col items-center justify-center gap-5 lg:items-start">
-            <a
-              href="#contact"
-              className="mt-5 flex h-10 w-60 cursor-pointer items-center justify-center rounded-md bg-blue-500 text-lg font-bold text-zinc-900 hover:bg-blue-800"
-            >
-              ENTRE EM CONTATO
-            </a>
+            <div className="flex items-center justify-center space-x-5">
+              <motion.a
+                whileHover={{ scale: 1.2 }}
+                transition={{ type: "spring", stiffness: 300 }}
+                href="#contact"
+                className="flex h-10 w-40 cursor-pointer items-center justify-center rounded-md bg-blue-500 text-lg font-bold text-zinc-900 hover:bg-blue-800"
+              >
+                CONTATO
+              </motion.a>
+              <motion.a
+                whileHover={{ scale: 1.2 }}
+                transition={{ type: "spring", stiffness: 300 }}
+                href="./curriculo.pdf"
+                download="Ruan Gonçalves Parreira.pdf"
+              >
+                <Curriculo />
+              </motion.a>
+            </div>
             <div className="flex gap-5">
-              <a
+              <motion.a
+                whileHover={{ scale: 1.2 }}
+                transition={{ type: "spring", stiffness: 300 }}
                 href="https://github.com/RuanParreira"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -69,8 +84,10 @@ export default function Hero() {
                     <path d="M9 18c-4.51 2-5-2-7-2" />
                   </svg>
                 </Button>
-              </a>
-              <a
+              </motion.a>
+              <motion.a
+                whileHover={{ scale: 1.2 }}
+                transition={{ type: "spring", stiffness: 300 }}
                 href="https://www.linkedin.com/in/ruan-parreira-0a4332279/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -92,8 +109,10 @@ export default function Hero() {
                     <circle cx="4" cy="4" r="2" />
                   </svg>
                 </Button>
-              </a>
-              <a
+              </motion.a>
+              <motion.a
+                whileHover={{ scale: 1.2 }}
+                transition={{ type: "spring", stiffness: 300 }}
                 href="https://www.instagram.com/ruan.parreira/?next=%2F"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -115,7 +134,7 @@ export default function Hero() {
                     <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
                   </svg>
                 </Button>
-              </a>
+              </motion.a>
             </div>
           </div>
         </div>
