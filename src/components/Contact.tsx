@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import emailjs from "emailjs-com";
 import Particles from "./Particles";
+import { motion } from "motion/react";
 
 export default function Contact() {
   const form = useRef<HTMLFormElement>(null);
@@ -171,12 +172,14 @@ export default function Contact() {
                 className="mb-2 w-full resize-none rounded-xl border border-zinc-600 bg-zinc-700 p-3 focus:ring-2 focus:ring-blue-500 focus:outline-none"
               />
             </div>
-            <button
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              transition={{ type: "spring", stiffness: 300 }}
               type="submit"
               className="h-14 cursor-pointer rounded-xl bg-blue-500 font-bold text-zinc-900 uppercase hover:bg-blue-600"
             >
               Enviar Mensagem
-            </button>
+            </motion.button>
           </form>
         </div>
       </div>

@@ -164,7 +164,9 @@ export default function Projects() {
                     ))}
                   </div>
                   <div className="flex space-x-4">
-                    <a
+                    <motion.a
+                      whileHover={{ scale: 1.4 }}
+                      transition={{ type: "spring", stiffness: 300 }}
                       href={project.github}
                       className="flex items-center gap-1"
                       target="_blank"
@@ -186,8 +188,10 @@ export default function Projects() {
                         <path d="M9 18c-4.51 2-5-2-7-2" />
                       </svg>
                       Git
-                    </a>
-                    <a
+                    </motion.a>
+                    <motion.a
+                      whileHover={{ scale: 1.4 }}
+                      transition={{ type: "spring", stiffness: 300 }}
                       href={project.site}
                       className="flex items-center gap-1"
                       target="_blank"
@@ -210,7 +214,7 @@ export default function Projects() {
                         <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
                       </svg>
                       Site
-                    </a>
+                    </motion.a>
                   </div>
                 </div>
               </motion.div>
