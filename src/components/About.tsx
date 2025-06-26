@@ -8,9 +8,9 @@ export default function About() {
     >
       <div>
         <img
-          src="./about.png"
+          src="./about.webp"
           alt="fotoSobre"
-          className="mb-10 rounded-xl object-cover lg:mb-0 lg:block lg:h-full lg:w-[50rem]"
+          className="mb-5 h-60 w-full rounded-xl object-cover lg:mb-0 lg:block lg:h-full lg:w-[50rem]"
         />
       </div>
       <div className="z-10 flex w-full min-w-0 flex-col items-center justify-center lg:items-start">

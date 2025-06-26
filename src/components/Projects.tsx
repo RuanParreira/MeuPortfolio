@@ -8,7 +8,7 @@ import { useRef } from "react";
 
 const projectsData = [
   {
-    image: "./bannerOrganizaLab.jpg",
+    image: "./bannerOrganizaLab.webp",
     title: "OrganizaLab",
     description:
       "O OrganizaLAB ajuda a gerenciar laboratórios de informática de forma prática e organizada, facilitando o controle de equipamentos",
@@ -17,7 +17,7 @@ const projectsData = [
     site: "https://organizalab.site/",
   },
   {
-    image: "./siteEtec2.png",
+    image: "./siteEtec.webp",
     title: "Etec Igarapava",
     description:
       "Site limpo e funcional desenvolvido para facilitar o acesso à informação por alunos e professores da Etec Antônio Junqueira da Veiga, em Igarapava.",
@@ -26,7 +26,7 @@ const projectsData = [
     site: "https://etecigarapava.github.io/site-etec/",
   },
   {
-    image: "./portfolioAndre.png",
+    image: "./portfolioAndre.webp",
     title: "Portfólio Andre",
     description:
       "Portfólio fictício criado para o desenvolvedor André, com foco em treinar Tailwind CSS e aplicar um web design moderno e responsivo.",

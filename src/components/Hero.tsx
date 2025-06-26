@@ -139,9 +139,9 @@ export default function Hero() {
           </div>
         </div>
         <img
-          src="./hero.png"
+          src="./hero.webp"
           alt="Foto de Perfil"
-          className="right-0 bottom-0 z-0 mask-t-from-80% mask-r-from-10% mask-l-from-80% object-fill lg:absolute lg:h-full"
+          className="right-0 bottom-0 z-0 h-full w-full mask-t-from-80% mask-r-from-10% mask-l-from-80% object-fill lg:absolute lg:h-full lg:w-auto"
         />
       </div>
       <a href="#about">
