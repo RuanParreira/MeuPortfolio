@@ -6,10 +6,12 @@ import { motion } from "motion/react";
 export default function Contact() {
   const form = useRef<HTMLFormElement>(null);
   const [successMsg, setSuccessMsg] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!form.current) return;
+    setLoading(true);
 
     const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
     const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
@@ -21,10 +23,12 @@ export default function Contact() {
         setSuccessMsg(true);
         setTimeout(() => setSuccessMsg(false), 3000); // Esconde após 3 segundos
         form.current?.reset();
+        setLoading(false);
       },
       (error) => {
         alert("Erro ao enviar mensagem: " + error.text);
         console.error("Erro EmailJS:", error);
+        setLoading(false);
       },
     );
   };
@@ -173,12 +177,13 @@ export default function Contact() {
               />
             </div>
             <motion.button
-              whileHover={{ scale: 1.1 }}
+              whileHover={!loading ? { scale: 1.1 } : {}}
               transition={{ type: "spring", stiffness: 300 }}
               type="submit"
-              className="h-14 cursor-pointer rounded-xl bg-blue-500 font-bold text-zinc-900 uppercase hover:bg-blue-600"
+              className={`h-14 cursor-pointer rounded-xl font-bold text-zinc-900 uppercase ${loading ? "cursor-not-allowed bg-blue-300" : "bg-blue-500 hover:bg-blue-600"}`}
+              disabled={loading}
             >
-              Enviar Mensagem
+              {loading ? "Enviando..." : "Enviar Mensagem"}
             </motion.button>
           </form>
         </div>
