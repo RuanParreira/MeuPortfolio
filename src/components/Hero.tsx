@@ -65,7 +65,7 @@ export default function Hero() {
               <motion.a
                 whileHover={{ scale: 1.2 }}
                 transition={{ type: "spring", stiffness: 300 }}
-                href="https://www.linkedin.com/in/ruan-parreira-0a4332279/"
+                href="https://www.linkedin.com/in/ruan-gon%C3%A7alves-parreira-042214397/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
