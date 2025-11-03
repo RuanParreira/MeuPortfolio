@@ -8,13 +8,13 @@ import { useRef } from "react";
 
 const projectsData = [
   {
-    image: "./bannerOrganizaLab.webp",
-    title: "OrganizaLab",
+    image: "./SGAC.png",
+    title: "SGAC",
     description:
-      "O OrganizaLAB ajuda a gerenciar laboratórios de informática de forma prática e organizada, facilitando o controle de equipamentos",
-    languages: ["HTML", "CSS", "PHP"],
-    github: "https://github.com/RuanParreira/OrganizaLAB",
-    site: "https://organizalab.site/",
+      "Sistema de voluntariado, para organizar os seu eventos e doações de maneira mais organizada e eficaz, trabalho da faculdade.",
+    languages: ["HTML", "Tailwindcss", "PHP", "MySQL", "JavaScript"],
+    github: "https://github.com/oCrazyoff/sgac",
+    site: "https://yellowgreen-meerkat-908084.hostingersite.com/",
   },
   {
     image: "./siteEtec.webp",
@@ -24,6 +24,15 @@ const projectsData = [
     languages: ["HTML", "CSS"],
     github: "https://github.com/EtecIgarapava/site-etec",
     site: "https://etecigarapava.github.io/site-etec/",
+  },
+  {
+    image: "./bannerOrganizaLab.webp",
+    title: "OrganizaLab",
+    description:
+      "O OrganizaLAB ajuda a gerenciar laboratórios de informática de forma prática e organizada, facilitando o controle de equipamentos",
+    languages: ["HTML", "CSS", "PHP"],
+    github: "https://github.com/RuanParreira/OrganizaLAB",
+    site: "https://organizalab.site/",
   },
   {
     image: "./portfolioAndre.webp",
@@ -140,7 +149,7 @@ export default function Projects() {
                 whileHover="hover"
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <div className="h-80 overflow-hidden">
+                <div className="h-50 overflow-hidden">
                   <motion.img
                     src={project.image}
                     alt={project.title}
@@ -149,10 +158,10 @@ export default function Projects() {
                     transition={{ type: "tween", duration: 0.2 }}
                   />
                 </div>
-                <div className="flex flex-col space-y-5 px-5">
+                <div className="flex h-[6.5rem] flex-col space-y-5 px-5">
                   <div className="space-y-5">
                     <h5 className="text-xl font-bold">{project.title}</h5>
-                    <p className="h-[6.5rem] overflow-auto text-sm">
+                    <p className="h-25 overflow-auto text-sm">
                       {project.description}
                     </p>
                   </div>
