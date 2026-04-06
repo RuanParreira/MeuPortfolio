@@ -61,7 +61,7 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="relative w-full scroll-mt-[4rem] bg-[#0F0F0F] px-[6%] py-24 lg:scroll-mt-[5rem] lg:px-[12%]"
+      className="relative w-full scroll-mt-[4rem] bg-[#0F0F0F] px-[4%] py-24 lg:scroll-mt-[5rem] lg:px-[12%]"
     >
       <div className="mb-16 flex flex-col items-center">
         <motion.div

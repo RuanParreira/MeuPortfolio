@@ -8,11 +8,11 @@ export default function Hero() {
       className="relative flex min-h-screen w-full scroll-mt-20 items-center overflow-hidden px-[4%] lg:px-[12%]"
     >
       {/* Background Image - Adjusted to fill the section height accurately */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 overflow-hidden">
         <img
           src="./hero.webp"
           alt="Foto de Perfil"
-          className="absolute right-0 bottom-0 h-full w-auto object-contain object-right opacity-80 transition-all duration-700 hover:opacity-100"
+          className="absolute right-0 bottom-0 h-full w-auto max-w-none object-contain object-right opacity-80 transition-all duration-700 hover:opacity-100"
         />
         {/* Gradients to blend the image with the background seamlessly */}
         <div className="absolute inset-0 bg-gradient-to-r from-zinc-950 via-zinc-950/20 to-transparent"></div>

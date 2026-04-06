@@ -38,10 +38,16 @@ export default function Footer() {
 
   return (
     <footer className="relative border-t border-zinc-900 bg-zinc-950/50 py-12 backdrop-blur-sm lg:py-16">
-      <div className="mx-auto max-w-7xl px-[4%] lg:px-[15%]">
+      <div className="relative z-10 px-[4%] lg:px-[12%]">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-3">
           {/* Logo and About */}
-          <div className="flex flex-col items-center space-y-4 md:items-start text-center md:text-left">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="flex flex-col items-center space-y-4 md:items-start text-center md:text-left"
+          >
             <a href="#hero" className="flex items-center gap-2 text-xl font-bold tracking-tight text-white group">
               RUAN PARREIRA
               <svg
@@ -64,10 +70,16 @@ export default function Footer() {
             <p className="max-w-xs text-sm leading-relaxed text-gray-400">
               Desenvolvedor focado em criar experiências digitais excepcionais e interfaces modernas.
             </p>
-          </div>
+          </motion.div>
 
           {/* Quick Links */}
-          <div className="flex flex-col items-center space-y-4 md:items-start">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            className="flex flex-col items-center space-y-4 md:items-start"
+          >
             <h4 className="text-sm font-bold uppercase tracking-wider text-white">Links Rápidos</h4>
             <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2 md:flex-col md:gap-y-3">
               <QuickLink href="#about" label="Sobre" />
@@ -75,10 +87,16 @@ export default function Footer() {
               <QuickLink href="#projects" label="Projetos" />
               <QuickLink href="#contact" label="Contato" />
             </nav>
-          </div>
+          </motion.div>
 
           {/* Social and Contact */}
-          <div className="flex flex-col items-center space-y-4 md:items-start">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="flex flex-col items-center space-y-4 md:items-start"
+          >
             <h4 className="text-sm font-bold uppercase tracking-wider text-white">Conecte-se</h4>
             <div className="flex gap-4">
               {socialLinks.map((social) => (
@@ -98,17 +116,23 @@ export default function Footer() {
             <p className="text-sm text-gray-400">
               ruanparreira22@gmail.com
             </p>
-          </div>
+          </motion.div>
         </div>
 
-        <div className="mt-16 flex flex-col items-center justify-between border-t border-zinc-900 pt-8 text-center md:flex-row md:text-left">
+        <motion.div 
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, delay: 0.4 }}
+          className="mt-16 flex flex-col items-center justify-between border-t border-zinc-900 pt-8 text-center md:flex-row md:text-left"
+        >
           <p className="text-sm text-gray-500">
             &copy; {currentYear} Ruan Parreira. Todos os direitos reservados.
           </p>
           <p className="mt-4 flex items-center gap-1 text-sm text-gray-500 md:mt-0">
             Feito com <span className="text-red-500">❤️</span> utilizando React & Tailwind
           </p>
-        </div>
+        </motion.div>
       </div>
     </footer>
   );

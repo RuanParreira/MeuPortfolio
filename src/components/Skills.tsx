@@ -64,7 +64,7 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="relative w-full scroll-mt-[4rem] px-[4%] py-20 lg:scroll-mt-[5rem] lg:px-[15%] lg:py-32"
+      className="relative w-full scroll-mt-[4rem] bg-[#0F0F0F] px-[4%] py-24 lg:scroll-mt-[5rem] lg:px-[12%] lg:py-32"
     >
       <div className="flex flex-col items-center">
         <h4 className="text-4xl font-bold tracking-tight text-white uppercase">Habilidades</h4>
@@ -84,10 +84,13 @@ export default function Skills() {
               whileHover={{ y: -5 }}
               className="group relative flex flex-col p-8 rounded-2xl bg-zinc-900/40 border border-white/5 transition-all duration-300 hover:bg-zinc-900/60 hover:border-white/10"
             >
-              {/* Icon Container */}
-              <div className={`mb-6 flex h-14 w-14 items-center justify-center rounded-2xl border transition-all duration-300 ${colorVariants[skill.color]}`}>
+              <motion.div 
+                animate={{ y: [0, -5, 0] }}
+                transition={{ repeat: Infinity, duration: 4, ease: "easeInOut", delay: index * 0.2 }}
+                className={`mb-6 flex h-14 w-14 items-center justify-center rounded-2xl border transition-all duration-300 ${colorVariants[skill.color]}`}
+              >
                 {skill.icon}
-              </div>
+              </motion.div>
 
               {/* Text Content */}
               <div className="space-y-3">

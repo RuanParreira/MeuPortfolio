@@ -10,6 +10,7 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
 
   * {
@@ -20,6 +21,9 @@
 
   body {
     background-color: var(--fundo);
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
   }
 }
 

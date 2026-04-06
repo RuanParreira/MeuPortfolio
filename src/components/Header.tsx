@@ -41,7 +41,7 @@ export default function Header() {
       <header
         className={`fixed top-0 left-0 right-0 z-[100] flex h-[4rem] w-full items-center justify-between px-[4%] transition-all duration-500 lg:h-[5rem] lg:px-[12%] ${
           scrolled || menuOpen 
-            ? "bg-zinc-950/80 shadow-2xl backdrop-blur-md border-b border-white/5 py-2" 
+            ? "bg-zinc-950/80 shadow-2xl backdrop-blur-md py-2" 
             : "bg-transparent py-4"
         }`}
       >
