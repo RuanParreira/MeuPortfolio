@@ -11,8 +11,8 @@ const projectsData = [
     image: "./SGAC.png",
     title: "SGAC",
     description:
-      "Sistema de voluntariado, para organizar os seu eventos e doações de maneira mais organizada e eficaz, trabalho da faculdade.",
-    languages: ["HTML", "Tailwindcss", "PHP", "MySQL", "JavaScript"],
+      "Sistema de voluntariado para organizar eventos e doações de maneira eficaz. Foco em gestão e impacto social.",
+    languages: ["HTML", "TailwindCSS", "PHP", "MySQL", "JavaScript"],
     github: "https://github.com/oCrazyoff/sgac",
     site: "https://yellowgreen-meerkat-908084.hostingersite.com/",
   },
@@ -20,8 +20,8 @@ const projectsData = [
     image: "./siteEtec.webp",
     title: "Etec Igarapava",
     description:
-      "Site limpo e funcional desenvolvido para facilitar o acesso à informação por alunos e professores da Etec Antônio Junqueira da Veiga, em Igarapava.",
-    languages: ["HTML", "CSS"],
+      "Portal institucional desenvolvido para otimizar o acesso à informação para a comunidade acadêmica da Etec Igarapava.",
+    languages: ["HTML", "CSS", "JavaScript"],
     github: "https://github.com/EtecIgarapava/site-etec",
     site: "https://etecigarapava.github.io/site-etec/",
   },
@@ -29,8 +29,8 @@ const projectsData = [
     image: "./bannerOrganizaLab.webp",
     title: "OrganizaLab",
     description:
-      "O OrganizaLAB ajuda a gerenciar laboratórios de informática de forma prática e organizada, facilitando o controle de equipamentos",
-    languages: ["HTML", "CSS", "PHP"],
+      "Solução inteligente para gestão de laboratórios, facilitando o controle de inventário e agendamentos de equipamentos.",
+    languages: ["HTML", "CSS", "PHP", "Laravel"],
     github: "https://github.com/RuanParreira/OrganizaLAB",
     site: "https://organizalab.site/",
   },
@@ -38,24 +38,20 @@ const projectsData = [
     image: "./portfolioAndre.webp",
     title: "Portfólio Andre",
     description:
-      "Portfólio fictício criado para o desenvolvedor André, com foco em treinar Tailwind CSS e aplicar um web design moderno e responsivo.",
-    languages: ["HTML", "Tailwindcss"],
+      "Web design moderno e responsivo focado em branding pessoal, explorando animações avançadas com Tailwind CSS.",
+    languages: ["HTML", "TailwindCSS", "Motion"],
     github: "https://github.com/RuanParreira/PortfolioAndre",
     site: "https://ruanparreira.github.io/PortfolioAndre/",
   },
-
-  // Adicione outros projetos aqui
 ];
 
-// Defina os variants fora do componente
 const cardVariants = {
-  initial: { scale: 1 },
-  hover: { scale: 1.07, boxShadow: "0 8px 32px 0 rgba(0, 0, 0, 0.37)" },
-};
-
-const imageVariants = {
-  initial: { scale: 1 },
-  hover: { scale: 1.1 },
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0 },
+  hover: { 
+    y: -10,
+    transition: { duration: 0.3, ease: "easeOut" }
+  },
 };
 
 export default function Projects() {
@@ -65,70 +61,57 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="flex w-full scroll-mt-[4rem] flex-col items-center justify-center bg-[#0F0F0F] px-[4%] py-10 lg:scroll-mt-[5rem] lg:px-[15%] lg:py-20"
+      className="relative w-full scroll-mt-[4rem] bg-[#0F0F0F] px-[6%] py-24 lg:scroll-mt-[5rem] lg:px-[12%]"
     >
-      <div className="flex flex-col items-center">
-        <h5 className="text-4xl">PROJETOS</h5>
-        <span className="mt-4 block h-1 w-24 bg-blue-500"></span>
-        <p className="mt-4 mb-4 text-center text-xl lg:mb-0 lg:text-left">
-          Alguns dos projetos que desenvolvi recentemente
-        </p>
+      <div className="mb-16 flex flex-col items-center">
+        <motion.div
+           initial={{ opacity: 0, y: -20 }}
+           whileInView={{ opacity: 1, y: 0 }}
+           viewport={{ once: true }}
+           className="text-center"
+        >
+          <h2 className="text-sm font-bold tracking-[0.2em] text-blue-500 uppercase italic">Portfolio</h2>
+          <h3 className="mt-2 text-4xl font-extrabold text-white lg:text-5xl">PROJETOS EM DESTAQUE</h3>
+          <span className="mx-auto mt-6 block h-1.5 w-20 rounded-full bg-gradient-to-r from-blue-600 to-cyan-500"></span>
+        </motion.div>
       </div>
+
       <div className="relative w-full">
-        {/* Setas personalizadas */}
-        <motion.button
-          ref={prevRef}
-          whileHover={{ scale: 1.4 }}
-          transition={{ type: "spring", stiffness: 300 }}
-          whileTap={{ scale: 0.9 }}
-          className="transitio absolute top-1/2 -left-[1rem] z-10 -translate-y-1/2 cursor-pointer text-white lg:left-[-2.5rem]"
-        >
-          {/* Ícone de seta para a esquerda */}
-          <svg
-            width="50"
-            height="50"
-            fill="none"
-            stroke="#ffffff"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
-            className="hover:stroke-blue-500"
+        {/* Navegação Customizada */}
+        <div className="absolute -top-16 right-0 hidden space-x-4 lg:flex">
+          <button
+            ref={prevRef}
+            className="cursor-pointer group flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/5 transition-all hover:border-blue-500 hover:bg-blue-500/10"
           >
-            <path d="M15 18l-6-6 6-6" />
-          </svg>
-        </motion.button>
-        <motion.button
-          ref={nextRef}
-          whileHover={{ scale: 1.4 }}
-          transition={{ type: "spring", stiffness: 300 }}
-          whileTap={{ scale: 0.9 }}
-          className="absolute top-1/2 -right-[1rem] z-10 -translate-y-1/2 cursor-pointer text-white lg:right-[-2.5rem]"
-        >
-          {/* Ícone de seta para a direita */}
-          <svg
-            width="50"
-            height="50"
-            fill="none"
-            stroke="#ffffff"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
-            className="hover:stroke-blue-500"
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-white group-hover:text-blue-500 transition-colors">
+              <path d="M15 18l-6-6 6-6" />
+            </svg>
+          </button>
+          <button
+            ref={nextRef}
+            className="cursor-pointer group flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/5 transition-all hover:border-blue-500 hover:bg-blue-500/10"
           >
-            <path d="M9 18l6-6-6-6" />
-          </svg>
-        </motion.button>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-white group-hover:text-blue-500 transition-colors">
+              <path d="M9 18l6-6-6-6" />
+            </svg>
+          </button>
+        </div>
+
         <Swiper
           modules={[Navigation, Pagination]}
-          spaceBetween={0}
-          slidesPerView={3}
+          spaceBetween={30}
+          slidesPerView={1}
           navigation={{
             prevEl: prevRef.current,
             nextEl: nextRef.current,
           }}
+          pagination={{ 
+            clickable: true,
+            dynamicBullets: true 
+          }}
           breakpoints={{
-            0: { slidesPerView: 1 }, // até 640px: 1 card
-            640: { slidesPerView: 1 }, // até 768px: 1 card
-            768: { slidesPerView: 2 }, // até 1024px: 2 cards
-            1024: { slidesPerView: 3 }, // acima de 1024px: 3 cards
+            768: { slidesPerView: 2 },
+            1280: { slidesPerView: 3 },
           }}
           onInit={(swiper) => {
             // @ts-ignore
@@ -138,92 +121,76 @@ export default function Projects() {
             swiper.navigation.init();
             swiper.navigation.update();
           }}
-          pagination={{ clickable: true }}
+          className="pb-16!"
         >
           {projectsData.map((project, idx) => (
-            <SwiperSlide key={idx} className="mb-8 px-[1rem] py-6">
+            <SwiperSlide key={idx} className="py-8">
               <motion.div
-                className="projectCards"
                 variants={cardVariants}
                 initial="initial"
+                whileInView="animate"
                 whileHover="hover"
-                transition={{ type: "spring", stiffness: 300 }}
+                viewport={{ once: true }}
+                className="group relative flex flex-col overflow-hidden rounded-2xl border border-white/5 bg-[#161616] p-4 transition-all hover:border-blue-500/30 shadow-2xl h-[520px]"
               >
-                <div className="h-50 overflow-hidden">
-                  <motion.img
+                {/* Imagem com Overlay */}
+                <div className="relative h-56 overflow-hidden rounded-xl">
+                  <img
                     src={project.image}
                     alt={project.title}
-                    className="h-full w-full rounded-t-xl object-cover"
-                    variants={imageVariants}
-                    transition={{ type: "tween", duration: 0.2 }}
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#161616] via-transparent to-transparent opacity-60"></div>
                 </div>
-                <div className="flex h-[6.5rem] flex-col space-y-5 px-5">
-                  <div className="space-y-5">
-                    <h5 className="text-xl font-bold">{project.title}</h5>
-                    <p className="h-25 overflow-auto text-sm">
+
+                {/* Conteúdo */}
+                <div className="flex flex-1 flex-col justify-between pt-6">
+                  <div className="space-y-4">
+                    <h5 className="text-2xl font-bold text-white group-hover:text-blue-400 transition-colors underline underline-offset-8 decoration-blue-500/0 group-hover:decoration-blue-500/50">
+                      {project.title}
+                    </h5>
+                    <p className="line-clamp-3 text-sm leading-relaxed text-gray-400">
                       {project.description}
                     </p>
+                    
+                    {/* Tags */}
+                    <div className="flex flex-wrap gap-2 pt-2">
+                      {project.languages.map((lang, i) => (
+                        <span 
+                          key={i}
+                          className="rounded-lg bg-blue-500/10 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-blue-400 border border-blue-500/10 group-hover:border-blue-500/30"
+                        >
+                          {lang}
+                        </span>
+                      ))}
+                    </div>
                   </div>
-                  <div className="flex space-x-2">
-                    {project.languages.map((lang, i) => (
-                      <span className="linguagens" key={i}>
-                        {lang}
-                      </span>
-                    ))}
-                  </div>
-                  <div className="flex space-x-4">
-                    <motion.a
-                      whileHover={{ scale: 1.4 }}
-                      transition={{ type: "spring", stiffness: 300 }}
+
+                  {/* Links de Ação */}
+                  <div className="flex items-center space-x-6 pt-6 border-t border-white/5 mt-auto">
+                    <a
                       href={project.github}
-                      className="flex items-center gap-1"
+                      className="flex items-center gap-2 text-sm font-medium text-gray-400 transition-colors hover:text-white"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="15"
-                        height="15"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="#ffffff"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="lucide lucide-github-icon lucide-github"
-                      >
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
                         <path d="M9 18c-4.51 2-5-2-7-2" />
                       </svg>
-                      Git
-                    </motion.a>
-                    <motion.a
-                      whileHover={{ scale: 1.4 }}
-                      transition={{ type: "spring", stiffness: 300 }}
+                      Código
+                    </a>
+                    <a
                       href={project.site}
-                      className="flex items-center gap-1"
+                      className="group/btn flex items-center gap-2 text-sm font-medium text-blue-400 transition-colors hover:text-blue-300"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="15"
-                        height="15"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="#ffffff"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="lucide lucide-external-link-icon lucide-external-link"
-                      >
-                        <path d="M15 3h6v6" />
-                        <path d="M10 14 21 3" />
-                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                      <span>Visualizar</span>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="transition-transform group-hover/btn:translate-x-1">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
                       </svg>
-                      Site
-                    </motion.a>
+                    </a>
                   </div>
                 </div>
               </motion.div>
