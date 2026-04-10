@@ -57,7 +57,7 @@ export default function About() {
           
           {/* Decoração de fundo */}
           <div className="absolute bottom-0 right-0 p-4 opacity-5 pointer-events-none">
-            <svg width="150" height="150" viewBox="0 0 100 100" fill="white">
+            <svg aria-hidden="true" width="150" height="150" viewBox="0 0 100 100" fill="white">
               <path d="M0,0 L100,100 M100,0 L0,100" stroke="currentColor" strokeWidth="1" />
             </svg>
           </div>
@@ -73,8 +73,8 @@ export default function About() {
         className="z-10 mt-12 flex w-full flex-col items-start lg:mt-0 lg:w-[55%]"
       >
         <div className="space-y-2">
-          <h2 className="text-sm font-bold tracking-[0.2em] text-blue-500 uppercase">Apresentação</h2>
-          <h3 className="text-4xl font-extrabold text-white lg:text-5xl">SOBRE MIM</h3>
+          <p className="text-sm font-bold tracking-[0.2em] text-blue-500 uppercase">Apresentação</p>
+          <h2 className="text-4xl font-extrabold text-white lg:text-5xl">SOBRE MIM</h2>
         </div>
         
         <span className="mt-4 mb-8 block h-1.5 w-20 rounded-full bg-gradient-to-r from-blue-600 to-cyan-500"></span>
@@ -110,7 +110,7 @@ export default function About() {
         </div>
 
         <div className="mt-12 w-full">
-          <h4 className="mb-6 text-sm font-bold tracking-widest text-gray-500 uppercase">Tecnologias de Domínio</h4>
+          <h3 className="mb-6 text-sm font-bold tracking-widest text-gray-500 uppercase">Tecnologias de Domínio</h3>
           <div className="w-full overflow-x-hidden mask-fade-edges">
             <Tecs />
           </div>

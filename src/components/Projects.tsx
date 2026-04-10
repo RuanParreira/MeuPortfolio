@@ -70,8 +70,8 @@ export default function Projects() {
            viewport={{ once: true }}
            className="text-center"
         >
-          <h2 className="text-sm font-bold tracking-[0.2em] text-blue-500 uppercase italic">Portfolio</h2>
-          <h3 className="mt-2 text-4xl font-extrabold text-white lg:text-5xl">PROJETOS EM DESTAQUE</h3>
+          <p className="text-sm font-bold tracking-[0.2em] text-blue-500 uppercase italic">Portfolio</p>
+          <h2 className="mt-2 text-4xl font-extrabold text-white lg:text-5xl">PROJETOS EM DESTAQUE</h2>
           <span className="mx-auto mt-6 block h-1.5 w-20 rounded-full bg-gradient-to-r from-blue-600 to-cyan-500"></span>
         </motion.div>
       </div>
@@ -81,17 +81,19 @@ export default function Projects() {
         <div className="absolute -top-16 right-0 hidden space-x-4 lg:flex">
           <button
             ref={prevRef}
+            aria-label="Projeto anterior"
             className="cursor-pointer group flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/5 transition-all hover:border-blue-500 hover:bg-blue-500/10"
           >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-white group-hover:text-blue-500 transition-colors">
+            <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-white group-hover:text-blue-500 transition-colors">
               <path d="M15 18l-6-6 6-6" />
             </svg>
           </button>
           <button
             ref={nextRef}
+            aria-label="Próximo projeto"
             className="cursor-pointer group flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/5 transition-all hover:border-blue-500 hover:bg-blue-500/10"
           >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-white group-hover:text-blue-500 transition-colors">
+            <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-white group-hover:text-blue-500 transition-colors">
               <path d="M9 18l6-6-6-6" />
             </svg>
           </button>
@@ -114,8 +116,10 @@ export default function Projects() {
             1280: { slidesPerView: 3 },
           }}
           onInit={(swiper) => {
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
             // @ts-ignore
             swiper.params.navigation.prevEl = prevRef.current;
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
             // @ts-ignore
             swiper.params.navigation.nextEl = nextRef.current;
             swiper.navigation.init();
@@ -146,9 +150,9 @@ export default function Projects() {
                 {/* Conteúdo */}
                 <div className="flex flex-1 flex-col justify-between pt-6">
                   <div className="space-y-4">
-                    <h5 className="text-2xl font-bold text-white group-hover:text-blue-400 transition-colors underline underline-offset-8 decoration-blue-500/0 group-hover:decoration-blue-500/50">
+                    <h3 className="text-2xl font-bold text-white group-hover:text-blue-400 transition-colors underline underline-offset-8 decoration-blue-500/0 group-hover:decoration-blue-500/50">
                       {project.title}
-                    </h5>
+                    </h3>
                     <p className="line-clamp-3 text-sm leading-relaxed text-gray-400">
                       {project.description}
                     </p>
@@ -174,7 +178,7 @@ export default function Projects() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
                         <path d="M9 18c-4.51 2-5-2-7-2" />
                       </svg>
@@ -187,7 +191,7 @@ export default function Projects() {
                       rel="noopener noreferrer"
                     >
                       <span>Visualizar</span>
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="transition-transform group-hover/btn:translate-x-1">
+                      <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="transition-transform group-hover/btn:translate-x-1">
                         <path d="M5 12h14M12 5l7 7-7 7"/>
                       </svg>
                     </a>

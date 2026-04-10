@@ -45,7 +45,7 @@ export default function Header() {
             : "bg-transparent py-4"
         }`}
       >
-        <a href="#hero" className="group">
+        <a href="#hero" className="group" aria-label="Ir para o início">
           <h1 className="flex items-center gap-2 text-xl font-black tracking-tighter text-white lg:text-2xl">
             RUAN
             <span className="text-blue-500">PARREIRA</span>
@@ -54,6 +54,7 @@ export default function Header() {
               transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
             >
               <svg
+                aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
                 height="24"
@@ -80,6 +81,7 @@ export default function Header() {
               <li key={section.id}>
                 <a
                   href={`#${section.id}`}
+                  aria-current={activeSection === section.id ? "page" : undefined}
                   className={`relative px-4 py-2 text-sm font-bold tracking-widest transition-all duration-300 hover:text-blue-500 ${
                     activeSection === section.id ? "text-blue-500" : "text-gray-400"
                   }`}
@@ -102,11 +104,12 @@ export default function Header() {
             className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/5 border border-white/10 text-white transition-all hover:bg-blue-600 lg:hidden"
             onClick={() => setMenuOpen((open) => !open)}
             aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
+            aria-expanded={menuOpen}
           >
             {menuOpen ? (
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
+              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
             ) : (
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="4" y1="12" x2="20" y2="12" /><line x1="4" y1="6" x2="20" y2="6" /><line x1="4" y1="18" x2="20" y2="18" /></svg>
+              <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="4" y1="12" x2="20" y2="12" /><line x1="4" y1="6" x2="20" y2="6" /><line x1="4" y1="18" x2="20" y2="18" /></svg>
             )}
           </button>
         </nav>

@@ -9,11 +9,21 @@ export default function Hero() {
     >
       {/* Background Image - Adjusted to fill the section height accurately */}
       <div className="absolute inset-0 z-0 overflow-hidden">
-        <img
-          src="./hero.webp"
-          alt="Foto de Perfil"
-          className="absolute right-0 bottom-0 h-full w-auto max-w-none object-contain object-right opacity-80 transition-all duration-700 hover:opacity-100"
-        />
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          className="absolute inset-0"
+        >
+          <img
+            src="./hero.webp"
+            alt="Foto de Perfil"
+            width="800"
+            height="1200"
+            fetchPriority="high"
+            className="absolute right-0 bottom-0 h-full w-auto max-w-none object-contain object-right opacity-80 transition-all duration-700 hover:opacity-100"
+          />
+        </motion.div>
         {/* Gradients to blend the image with the background seamlessly */}
         <div className="absolute inset-0 bg-gradient-to-r from-zinc-950 via-zinc-950/20 to-transparent"></div>
         <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-zinc-950 to-transparent"></div>
@@ -27,14 +37,14 @@ export default function Hero() {
           className="flex flex-col gap-6"
         >
           <div className="space-y-2">
-            <motion.h2 
+            <motion.p 
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-sm font-bold tracking-[0.3em] text-blue-500 uppercase lg:text-base"
+              className="text-sm font-bold tracking-[0.3em] text-blue-500 uppercase lg:text-base mb-2"
             >
               SOFTWARE DEVELOPER
-            </motion.h2>
+            </motion.p>
             <h1 className="text-3xl font-extrabold leading-tight text-white md:text-5xl ">
               Olá, eu sou o <span className="text-blue-500">Ruan</span>, <br />
               Desenvolvedor <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">FullStack</span>
@@ -48,7 +58,7 @@ export default function Hero() {
           </p>
 
           <div className="mt-4 flex flex-col items-start gap-8">
-            <div className="flex flex-wrap items-center gap-4">
+            <div className="grid grid-cols-2 items-center gap-4">
               <motion.a
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -62,9 +72,9 @@ export default function Hero() {
               <Curriculo />
             </div>
 
-            <div className="flex items-center gap-6">
+            <div className="flex w-full items-center justify-center md:w-auto md:justify-start gap-6">
               <p className="text-xs font-bold uppercase tracking-widest text-zinc-500">Siga-me</p>
-              <div className="h-px w-12 bg-zinc-800"></div>
+              <div className="h-px hidden md:block w-12 bg-zinc-800"></div>
               <div className="flex gap-4">
                 {[
                   { id: 'github', href: "https://github.com/RuanParreira", icon: <><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></> },
@@ -78,8 +88,9 @@ export default function Hero() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-zinc-500 transition-colors"
+                    aria-label={`Acessar meu ${social.id}`}
                   >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       {social.icon}
                     </svg>
                   </motion.a>
@@ -96,7 +107,7 @@ export default function Hero() {
         transition={{ delay: 1, duration: 1 }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2"
       >
-        <a href="#about" className="group flex flex-col items-center gap-2">
+        <a href="#about" className="group flex flex-col items-center gap-2" aria-label="Rolar para a seção sobre mim">
           <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-500 transition-colors group-hover:text-blue-500">Scroll</span>
           <div className="relative h-10 w-6 rounded-full border-2 border-zinc-800 group-hover:border-blue-500/50">
             <motion.div 
